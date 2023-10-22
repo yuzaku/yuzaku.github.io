@@ -1,7 +1,8 @@
 <html>
-
-<head>
-    <title>Javascript</title>
+    <head>
+    <title>SMAN 15 Surabaya</title>
+    <link rel="icon" type="image/x-icon" href="\Asset\favicon.png">
+    <link rel="stylesheet" href="css/style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
@@ -10,59 +11,185 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
         integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-    <script>
-        function validateForm(){
-            var nrp = document.getElementById("nrp");
-            var msg = document.getElementById("msg");
-            //cek hanya yang invalid
-            if (isNaN(nrp.value) == true){
-                nrp.focus();
-                nrp.placeholder = "contoh : 5026221074";
-                msg.innerHTML = "NRP harus angka!";//innerHTML mengubah tulisan dalam tag
-                return false;
-            }
-            if (nrp.value == ""){
-                nrp.focus();
-                nrp.placeholder = "contoh : 5026221074";
-                alert("NRP harus diisi!");
-                return false;
-            }
-            if (nrp.value.length != 10){
-                nrp.focus();
-                nrp.placeholder = "contoh : 5026221074";
-                alert("NRP harus 10 digit, anda memasukkan " + nrp.value.length + " digit");
-                return false;
-            }
-
-        }
-    </script>
-</head>
-
-<body>
-    <div class="container">
-        <div class="jumbotron">Form Validasi adalah mencegah pengiriman data ke server jika ada yang invalid atau tidak
-            sesuai constraint database</div>
-            <script>
-                function validate(){
-                    console.log("baris 22");
-                    return false;
-                    console.log("baris 24");
-                    return true;
-                    console.log("baris 26");
-                    return false;
+    </head>
+    <body>
+        <nav id="mynav">
+            <img src="Asset/navbar_icon.png" alt="" class="nav-icon">
+            <label class="logo" id="sman">SMAN 15 Surabaya</label>
+            <ul>
+                <li><a href="#" id="profil">Profil</a></li>
+                <li><a href="#" id="informasi">Informasi</a></li>
+                <li><a href="#" id="pengumuman">Pengumuman</a></li>
+                <li><a href="#" id="prestasi">Prestasi</a></li>
+                <li><a href="#" id="artikel">Artikel</a></li>
+                <li><a href="#" id="kontak">Kontak</a></li>
+            </ul>
+        </nav>
+        <script>
+            var nav = document.getElementById("mynav");
+            var informasi = document.getElementById("informasi");
+            var pengumuman = document.getElementById("pengumuman");
+            var prestasi = document.getElementById("prestasi");
+            var artikel = document.getElementById("artikel");
+            var kontak = document.getElementById("kontak");
+            var profil = document.getElementById("profil");
+            var sman = document.getElementById("sman");
+            window.onscroll = function () { 
+                if (document.body.scrollTop >= 100 || document.documentElement.scrollTop >= 100) {
+                    nav.classList.add("nav-colored");
+                    nav.classList.remove("nav-transparent");
+                    informasi.classList.add("nav-text");
+                    prestasi.classList.add("nav-text");
+                    pengumuman.classList.add("nav-text");
+                    artikel.classList.add("nav-text");
+                    kontak.classList.add("nav-text");
+                    profil.classList.add("nav-text");
+                    sman.classList.remove("logo");
+                    sman.classList.add("nav-title");
+                } 
+                else {
+                    nav.classList.add("nav-transparent");
+                    nav.classList.remove("nav-colored");
+                    informasi.classList.remove("nav-text");
+                    prestasi.classList.remove("nav-text");
+                    pengumuman.classList.remove("nav-text");
+                    artikel.classList.remove("nav-text");
+                    kontak.classList.remove("nav-text");
+                    profil.classList.remove("nav-text");
+                    sman.classList.remove("nav-title");
+                    sman.classList.add("logo")
                 }
-            </script>
-        <form action="https://google.com" method="get" onsubmit="return validateForm();">
-            <div class="form-group">
-                <label for="nrp">NRP : </label>
-                <input type="text" class="form-control" id="nrp">
-                <div id="msg" class="text-danger"></div>
+            };
+        </script>
+        <img src="Asset/sekolah.jpg" alt="libels" class="img-fluid">
+        <br>
+        <br>
+        <br>
+        <h1 class="title">Informasi Merdeka Belajar</h1>
+        <p class="title-desc">Informasi Tentang Merdeka Belajar SMAN 15 Surabaya</p>
+        <br>
+        <br>
+        <div class="row row-add">
+            <div class="col-4">
+                <img src="Asset/p1.jpeg" alt="" class="img-fluid">
+                <a href="" class="article-title"><h5>Pengumuman Pemetaan Kelas XI Tahun Pelajaran 2023-2024</h5></a>
+                <br>
+                <p class="desc">Menindaklajuti hasil dari pemetaan peserta didik pada alternatif kelompok mata pelajaran peminatan fase F tahun dan akan dimulainya kegiatan belajar mengajar tahun pelajaran 2023-2024...</p>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+            
             </div>
-            <input type="submit" value="DAFTAR" class="btn btn-primary">
-            <input type="reset" value="ULANGI" class="btn btn-warning">
-        </form>
-    </div>
-
-</body>
-
+            <div class="col-4">
+                <img src="Asset/p2.jpeg" alt="" class="img-fluid">
+                <a class="article-title" href=""><h5>Pengumuman Pemetaan Peserta Didik Dalam Alternatif Kelompok Mata Pelajaran Peminatan Fase F Tahun Pelajaran 2023-2024</h5></a>
+                <br>
+                <p class="desc">Serangkaian proses asesmen yang sudah dilakukan oleh guru bimbingan konseling...</p>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+                
+            </div>
+            <div class="col-4">
+                <img src="Asset/p3.jpg" alt="">
+                <a href="" class="article-title"><h5>IMPLEMENTASI KURIKULUM MERDEKA 2023</h5></a>
+                <br>
+                <p class="desc">Melanjutkan sebelumnya sosialaisasi yang diadakan pada tahun 30 Juli 2022 lalu. Sosialisasi IKM hari ini, Jumat 10 Maret 2023 berfokus kepada evaluasi. Evaluasi toidak hanya ditujukan...</p>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+                
+            </div>
+        </div>  
+        <br>
+        <br>
+        <a href="" class="more">LOAD MORE...</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="title">Pengumuman</h1>
+        <p class="title-desc">Pengumuman Terbaru SMAN 15 Surabaya</p>
+        <br>
+        <br>
+        <div class="row row-add">
+            <div class="col-4">
+                <img src="Asset/P4.jpeg" alt="" class="img-fluid">
+                <a href="" class="article-title"><h5>Workshop Pengembangan Modul Ajar Kurikulum Merdeka</h5></a>
+                <br>
+                <p class="desc">Surabaya, 14 Agustus 2023 – Hari ini, SMAN 15 Surabaya menjadi tempat bergengsi bagi para pendidik dalam upaya mengembangkan diri dalam dunia pendidikan...</p>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+            
+            </div>
+            <div class="col-4">
+                <img src="Asset/p5.jpg" alt="" class="img-fluid">
+                <a class="article-title" href=""><h5>PENGUMUMAN JADWAL PELAJARAN BERLAKU MULAI 25 JULI 2023</h5></a>
+                <br>
+                <p class="desc">Jadwal dibawah ini berlaku mulai hari selasa 25 Juli 2023.</p>
+                <br>
+                <br>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+                
+            </div>
+            <div class="col-4">
+                <img src="Asset/p1.jpeg" alt="">
+                <a href="" class="article-title"><h5>Pengumuman Pemetaan Kelas XI Tahun Pelajaran 2023-2024</h5></a>
+                <br>
+                <p class="desc">Menindaklajuti hasil dari pemetaan peserta didik pada alternatif kelompok mata pelajaran peminatan fase F tahun dan akan dimulainya kegiatan belajar mengajar tahun pelajaran 2023-2024...</p>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+                
+            </div>
+        </div>  
+        <br>
+        <br>
+        <a href="" class="more">LOAD MORE...</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="title">Prestasi Siswa</h1>
+        <p class="title-desc">Prestasi Siswa SMAN 15 Surabaya</p>
+        <br>
+        <br>
+        <div class="row row-add">
+            <div class="col-4">
+                <img src="Asset/p7.jpg" alt="" class="img-fluid">
+                <a href="" class="article-title"><h5>Lomba Musikalisasi Puisi 2023</h5></a>
+                <br>
+                <p class="desc">Selamat untuk Peserta Didik SMAN 15 Surabaya Juara Lomba Musikalisasi Puisi tingkat Provinsi.</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+            
+            </div>
+            <div class="col-4">
+                <img src="Asset/p8.png" alt="" class="img-fluid">
+                <a class="article-title" href=""><h5>Prestasi Siswa Maret 2023</h5></a>
+                <br>
+                <p class="desc">Novia Rizky Anwary Juara II Tunggal Dewasa Putri kategori Seni Bersenjata, Risyad Ihsanul Akmal (X-4) dan Hafizah Mutiah Inas (X-4) meraih Juara Harapan 1 Lomba Entrepreneur Club STIESIA</p>
+                <br>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+                
+            </div>
+            <div class="col-4">
+                <img src="Asset/p9.jpg" alt="">
+                <a href="" class="article-title"><h5>Sederet Prestasi Siswa</h5></a>
+                <br>
+                <p class="desc">Kepala SMAN 15 Johanes Mardijono S.Pd., M.M. didampingi Kepala Dinas Pendidikan Jawa Timur Wahid Wahyudi Menerima penghargaan dari Gubernur Jawa Timur Khofifah Indar Parawangsa Juara Umum SMAN AWARD 2022</p>
+                <br>
+                <a href="" class="read-more">READ MORE >></a>
+                
+            </div>
+        </div>  
+        <br>
+        <br>
+        <a href="" class="more">LOAD MORE...</a>      
+    </body>
 </html>
